@@ -6,11 +6,11 @@ public class Soldier {
     private int id;
     private Gun gun;
     private boolean isAlive = true;
-
-    public Soldier(int health, int damage, int id) {
-        this.health = health;
-        this.damage = damage;
+    private boolean gpA;
+    public Soldier(int id, boolean gpA, Gun gun) {
         this.id = id;
+        this.gpA = gpA;
+        this.gun = gun;
     }
 
     public Gun getGun() {
