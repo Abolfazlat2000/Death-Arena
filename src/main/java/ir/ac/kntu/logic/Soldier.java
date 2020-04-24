@@ -4,13 +4,17 @@ public class Soldier {
     private int health;
     private int damage;
     private int id;
-    //private Gun gun;
+    private Gun gun;
     private boolean isAlive = true;
 
     public Soldier(int health, int damage, int id) {
         this.health = health;
         this.damage = damage;
         this.id = id;
+    }
+
+    public Gun getGun() {
+        return gun;
     }
 
     public boolean isAlive() {
