@@ -5,7 +5,9 @@ public class Gun {
     private int hitRate;
     private Calibre calibre;
 
-    public Gun() {
+    public Gun(int damageRng, int hitRate) {
+        this.damageRng = damageRng;
+        this.hitRate = hitRate;
     }
 
     public Calibre getCalibre() {
@@ -24,11 +26,13 @@ public class Gun {
         this.damageRng = damageRng;
     }
 
+    public void setHitRate(int hitRate) {
+        this.hitRate = hitRate;
+    }
+
     public int getHitRate() {
         return hitRate;
     }
 
-    public void setHitRate(int hitRate) {
-        this.hitRate = hitRate;
-    }
+
 }

@@ -4,8 +4,16 @@ public class SniperRifle extends Gun {
     private boolean scope;
 
     public SniperRifle() {
-        this.setDamageRng(20);
-        this.setHitRate(60);
+        super(20,60);
+    }
+
+    public SniperRifle(boolean scope) {
+        super(20, 60);
+        this.scope = scope;
+    }
+
+    public boolean isScope() {
+        return scope;
     }
 
     public void setScope(boolean scope) {

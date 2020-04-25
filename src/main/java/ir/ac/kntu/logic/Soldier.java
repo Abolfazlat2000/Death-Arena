@@ -2,15 +2,16 @@ package ir.ac.kntu.logic;
 
 public class Soldier {
     private int health;
-    private int damage;
+
     private int id;
     private Gun gun;
     private boolean isAlive = true;
     private boolean gpA;
-    public Soldier(int id, boolean gpA, Gun gun) {
+    public Soldier(int id, boolean gpA, Gun gun, int health) {
         this.id = id;
         this.gpA = gpA;
         this.gun = gun;
+        this.health = health;
     }
 
     public Gun getGun() {
@@ -29,7 +30,20 @@ public class Soldier {
         return this.health;
     }
 
-    public int getDamage() {
-        return this.damage;
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    @Override
+    public String toString() {
+        return "Soldier{" +
+                "health=" + health +
+                ", id=" + id +
+                ", gun=" + gun +
+
+                ", Calibre=" + getGun().getCalibre() +
+                ", isAlive=" + isAlive +
+                ", gpA=" + gpA +
+                '}';
     }
 }
