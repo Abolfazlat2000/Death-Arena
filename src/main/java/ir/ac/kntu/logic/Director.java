@@ -27,7 +27,7 @@ public class Director {
 
         victoryState = VictoryState.NOT_FINISHED;
     }
-    public void creatTeams(int numOfSoldier){
+    public void creatTeams(int numOfSoldier) throws InterruptedException {
         groupA.clear();
         groupB.clear();
         for(int i=0; i < numOfSoldier; i++){
@@ -63,7 +63,7 @@ public class Director {
         }
 
         graphicsEngine.initialize(groupA,groupB);
-        startGameLoop(numOfSoldier);
+        startGameLoop();
 
     }
     public void calibreSetter(Soldier soldier){
@@ -116,25 +116,28 @@ public class Director {
         } else {
             //print("tie")
         }
+        graphicsEngine.visualizeFight(soldier1,soldier2,firstHited,secondHited);
     }
 
-    public boolean deleteDeathSoldier(Soldier a , Soldier b){
+    public void deleteDeathSoldier(Soldier a , Soldier b){
         if(!a.isAlive()){
             groupA.remove(a);
-            return true;
+
         }
         if (!b.isAlive()){
             groupB.remove(b);
-            return true;
+
         }
-        return false;
+
     }
-    public void startGameLoop(int numOfSoldier) {
+    public void startGameLoop() throws InterruptedException {
         //TODO: Add Game Logic Loop here - Graphics also go here
 
-        while (groupB.size() >= 0 && groupA.size() >= 0) {
-            currentASoldier = selectSoldier(groupA, numOfSoldier);
-            currentBSoldier = selectSoldier(groupB, numOfSoldier);
+        while (groupB.size() != 0 && groupA.size() != 0) {
+
+            currentASoldier = selectSoldier(groupA, groupA.size());
+            currentBSoldier = selectSoldier(groupB, groupB.size());
+
 //            System.out.println(currentASoldier.toString());
 //            System.out.println(currentBSoldier.toString());
 
@@ -146,18 +149,16 @@ public class Director {
             }
 //            System.out.println(currentASoldier.toString());
 //            System.out.println(currentBSoldier.toString());
-            if (deleteDeathSoldier(currentASoldier, currentBSoldier)){
-                numOfSoldier--;
-            }
-            if (numOfSoldier<0){
-                break;
-            }
+            deleteDeathSoldier(currentASoldier, currentBSoldier);
+            Thread.sleep(1000);
 
         }
         if (groupA.size() == 0){
             victoryState = VictoryState.WIN_A;
+            graphicsEngine.visualizeVictoryCondition(victoryState);
         }else{
             victoryState = VictoryState.WIN_B;
+            graphicsEngine.visualizeVictoryCondition(victoryState);
         }
 
     }

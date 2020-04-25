@@ -5,7 +5,7 @@ import ir.ac.kntu.logic.Director;
 import ir.ac.kntu.logic.GraphicsEngine;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         GraphicsEngine engine = new ConsoleGraphicsEngine(); 
         Director director = new Director(engine);
         Scanner scanner = new Scanner(System.in);

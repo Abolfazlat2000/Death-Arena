@@ -34,6 +34,10 @@ public class Soldier {
         this.health = health;
     }
 
+    public boolean isGpA() {
+        return gpA;
+    }
+
     @Override
     public String toString() {
         return "Soldier{" +
