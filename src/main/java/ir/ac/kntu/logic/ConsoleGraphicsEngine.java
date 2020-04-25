@@ -9,7 +9,12 @@ public class ConsoleGraphicsEngine implements GraphicsEngine {
 
     @Override
     public void initialize(ArrayList<Soldier> groupA, ArrayList<Soldier> groupB) {
-
+        System.out.println("Team A:");
+        System.out.println(groupA);
+        System.out.println("-----------------------------------------------------");
+        System.out.println("Team B:");
+        System.out.println(groupB);
+        System.out.println("-----------------------------------------------------");
     }
 
     @Override
