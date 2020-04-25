@@ -62,6 +62,7 @@ public class Director {
             groupB.add(soldier);
         }
 
+        graphicsEngine.initialize(groupA,groupB);
         startGameLoop(numOfSoldier);
 
     }
@@ -147,6 +148,9 @@ public class Director {
 //            System.out.println(currentBSoldier.toString());
             if (deleteDeathSoldier(currentASoldier, currentBSoldier)){
                 numOfSoldier--;
+            }
+            if (numOfSoldier<0){
+                break;
             }
 
         }

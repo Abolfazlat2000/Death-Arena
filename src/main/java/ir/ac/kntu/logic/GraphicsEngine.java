@@ -1,11 +1,12 @@
 package ir.ac.kntu.logic;
 
-import java.util.ArrayList;
+
+import java.util.List;
 
 public interface GraphicsEngine {
 
 
-    public void initialize(ArrayList<Soldier> groupA, ArrayList<Soldier> groupB);
+    public void initialize(List<Soldier> groupA, List<Soldier> groupB);
 
     public void visualizeFight(Soldier currentASoldier,Soldier currentBSoldier);
 

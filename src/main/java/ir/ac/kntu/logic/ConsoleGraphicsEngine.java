@@ -1,6 +1,7 @@
 package ir.ac.kntu.logic;
 
-import java.util.ArrayList;
+
+import java.util.List;
 
 public class ConsoleGraphicsEngine implements GraphicsEngine {
 
@@ -8,12 +9,18 @@ public class ConsoleGraphicsEngine implements GraphicsEngine {
 
 
     @Override
-    public void initialize(ArrayList<Soldier> groupA, ArrayList<Soldier> groupB) {
+    public void initialize(List<Soldier> groupA, List<Soldier> groupB) {
         System.out.println("Team A:");
-        System.out.println(groupA);
+        for (int i = 0 ; i <groupA.size();i++){
+
+            System.out.println(groupA.get(i).toString());
+        }
         System.out.println("-----------------------------------------------------");
         System.out.println("Team B:");
-        System.out.println(groupB);
+        for (int i = 0 ; i <groupB.size();i++){
+
+            System.out.println(groupB.get(i).toString());
+        }
         System.out.println("-----------------------------------------------------");
     }
 
