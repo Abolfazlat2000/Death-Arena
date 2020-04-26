@@ -1,7 +1,5 @@
 package ir.ac.kntu.logic;
 
-
-import java.nio.CharBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -136,8 +134,7 @@ public class Director {
             currentASoldier = selectSoldier(groupA, groupA.size());
             currentBSoldier = selectSoldier(groupB, groupB.size());
 
-//            System.out.println(currentASoldier.toString());
-//            System.out.println(currentBSoldier.toString());
+
 
             if (aStarting()) {
                 // A attacking first
@@ -145,8 +142,7 @@ public class Director {
             } else {
                 attack(currentBSoldier, currentASoldier);
             }
-//            System.out.println(currentASoldier.toString());
-//            System.out.println(currentBSoldier.toString());
+
             deleteDeathSoldier(currentASoldier, currentBSoldier);
             Thread.sleep(1000);
             //scanner.wait();

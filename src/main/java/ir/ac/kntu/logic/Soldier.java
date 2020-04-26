@@ -2,11 +2,11 @@ package ir.ac.kntu.logic;
 
 public class Soldier {
     private int health;
-
     private int id;
     private Gun gun;
     private boolean isAlive = true;
     private boolean gpA;
+
     public Soldier(int id, boolean gpA, Gun gun, int health) {
         this.id = id;
         this.gpA = gpA;
@@ -40,6 +40,7 @@ public class Soldier {
 
     @Override
     public String toString() {
+
         return "Soldier{" +
                 "health=" + health +
                 ", id=" + id +
@@ -47,7 +48,6 @@ public class Soldier {
 
                 ", Calibre=" + getGun().getCalibre() +
                 ", isAlive=" + isAlive +
-                ", gpA=" + gpA +
-                '}';
+                ", gpA=" + gpA ;
     }
 }

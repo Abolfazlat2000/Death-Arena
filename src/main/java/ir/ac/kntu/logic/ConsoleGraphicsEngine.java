@@ -14,6 +14,7 @@ public class ConsoleGraphicsEngine implements GraphicsEngine {
         for (int i = 0 ; i <groupA.size();i++){
 
             System.out.println(groupA.get(i).toString());
+
         }
         System.out.println("-----------------------------------------------------");
         System.out.println("Team B:");
