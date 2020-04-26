@@ -1,5 +1,6 @@
 package ir.ac.kntu.logic;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,7 +28,7 @@ public class Director {
 
         victoryState = VictoryState.NOT_FINISHED;
     }
-    public void creatTeams(int numOfSoldier) throws InterruptedException {
+    public void creatTeams(int numOfSoldier) throws InterruptedException, IOException {
         groupA.clear();
         groupB.clear();
         for(int i=0; i < numOfSoldier; i++){
@@ -126,7 +127,7 @@ public class Director {
         }
 
     }
-    public void startGameLoop() throws InterruptedException {
+    public void startGameLoop() throws InterruptedException, IOException {
         //TODO: Add Game Logic Loop here - Graphics also go here
 
         while (groupB.size() != 0 && groupA.size() != 0) {
@@ -144,15 +145,16 @@ public class Director {
             }
 
             deleteDeathSoldier(currentASoldier, currentBSoldier);
-            Thread.sleep(1000);
-            //scanner.wait();
+            //Thread.sleep(1000);
+            graphicsEngine.initialize(groupA,groupB);
+            System.in.read();
 
         }
         if (groupA.size() == 0){
-            victoryState = VictoryState.WIN_A;
+            victoryState = VictoryState.WIN_B;
             graphicsEngine.visualizeVictoryCondition(victoryState);
         }else{
-            victoryState = VictoryState.WIN_B;
+            victoryState = VictoryState.WIN_A;
             graphicsEngine.visualizeVictoryCondition(victoryState);
         }
 
