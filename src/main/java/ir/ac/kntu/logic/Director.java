@@ -1,8 +1,10 @@
 package ir.ac.kntu.logic;
 
 
+import java.nio.CharBuffer;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import ir.ac.kntu.util.RandomHelper;
 public class Director {
@@ -17,7 +19,7 @@ public class Director {
 
     private VictoryState victoryState;
 
-
+    //Scanner scanner = new Scanner(System.in);
     public Director(GraphicsEngine graphicsEngine) {
         //TODO: Intialize soldiers
         groupA = new ArrayList<>();
@@ -102,8 +104,6 @@ public class Director {
                     if (soldier1.getHealth() <= 0){
                         soldier1.setAlive(false);
                     }
-                } else{
-                    //print("B couldn't attack")
                 }
             }
         } else if (secondHited){
@@ -113,8 +113,6 @@ public class Director {
                 soldier1.setAlive(false);
             }
 
-        } else {
-            //print("tie")
         }
         graphicsEngine.visualizeFight(soldier1,soldier2,firstHited,secondHited);
     }
@@ -151,6 +149,7 @@ public class Director {
 //            System.out.println(currentBSoldier.toString());
             deleteDeathSoldier(currentASoldier, currentBSoldier);
             Thread.sleep(1000);
+            //scanner.wait();
 
         }
         if (groupA.size() == 0){

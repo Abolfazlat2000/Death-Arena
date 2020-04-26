@@ -25,7 +25,8 @@ public class ConsoleGraphicsEngine implements GraphicsEngine {
     }
 
     @Override
-    public void visualizeFight(Soldier currentASoldier, Soldier currentBSoldier,boolean firstHited,boolean secondHited) {
+    public void visualizeFight(Soldier currentASoldier, Soldier currentBSoldier
+            ,boolean firstHited,boolean secondHited) {
         String teamName = "";
         String enemyName = "";
         if (currentASoldier.isGpA()){
@@ -39,7 +40,8 @@ public class ConsoleGraphicsEngine implements GraphicsEngine {
         System.out.println("-----------------------------------------------------");
         if (firstHited){
             System.out.println(teamName+"'s turn:");
-            System.out.println(teamName+" attacked "+enemyName+" and "+enemyName +" took "+currentASoldier.getGun().getDamageRng()+" damage!");
+            System.out.println(teamName+" attacked "+enemyName+" and "+enemyName +
+                    " took "+currentASoldier.getGun().getDamageRng()+" damage!");
             if (currentBSoldier.getHealth() <= 0){
                 System.out.println("Oh "+enemyName+" dead!!");
             }
@@ -47,7 +49,8 @@ public class ConsoleGraphicsEngine implements GraphicsEngine {
                 //B's turn
                 System.out.println("Now "+enemyName+"'s turn:");
                 if (secondHited){
-                    System.out.println(enemyName+" attacked "+teamName+" and "+teamName +" took "+currentBSoldier.getGun().getDamageRng()+" damage!");
+                    System.out.println(enemyName+" attacked "+teamName+" and "+teamName +
+                            " took "+currentBSoldier.getGun().getDamageRng()+" damage!");
                     if (currentASoldier.getHealth() <= 0){
                         System.out.println("Oh "+teamName+" dead!!");
                     }
@@ -59,7 +62,8 @@ public class ConsoleGraphicsEngine implements GraphicsEngine {
         } else if (secondHited){
             //print("A couldn't attack")
             System.out.println(teamName+" failed to attack");
-            System.out.println(enemyName+" attacked "+teamName+" and "+teamName +" took "+currentASoldier.getGun().getDamageRng()+" damage!");
+            System.out.println(enemyName+" attacked "+teamName+" and "+teamName +
+                    " took "+currentASoldier.getGun().getDamageRng()+" damage!");
             if (currentASoldier.getHealth() <= 0){
                 System.out.println("Oh "+teamName+" dead!!");
             }

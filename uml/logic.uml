@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ir.ac.kntu.logic</OriginalElement>
+  <nodes>
+    <node x="0.0" y="749.0">ir.ac.kntu.logic.ConsoleGraphicsEngine</node>
+    <node x="305.0" y="224.0">ir.ac.kntu.logic.AssultRifle</node>
+    <node x="627.0" y="577.0">ir.ac.kntu.logic.Calibre</node>
+    <node x="52.0" y="432.0">ir.ac.kntu.logic.Director.VictoryState</node>
+    <node x="375.0" y="577.0">ir.ac.kntu.logic.Soldier</node>
+    <node x="407.0" y="0.0">ir.ac.kntu.logic.Gun</node>
+    <node x="0.0" y="0.0">ir.ac.kntu.logic.Director</node>
+    <node x="0.0" y="577.0">ir.ac.kntu.logic.GraphicsEngine</node>
+    <node x="472.0" y="192.0">ir.ac.kntu.logic.SniperRifle</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ir.ac.kntu.logic.AssultRifle" target="ir.ac.kntu.logic.Gun">
+      <point x="0.0" y="-28.0" />
+      <point x="378.5" y="167.0" />
+      <point x="436.0" y="167.0" />
+      <point x="-29.0" y="71.0" />
+    </edge>
+    <edge source="ir.ac.kntu.logic.Director.VictoryState" target="ir.ac.kntu.logic.Director">
+      <point x="0.0" y="-50.0" />
+      <point x="0.0" y="191.0" />
+    </edge>
+    <edge source="ir.ac.kntu.logic.SniperRifle" target="ir.ac.kntu.logic.Gun">
+      <point x="0.0" y="-60.0" />
+      <point x="551.5" y="167.0" />
+      <point x="494.0" y="167.0" />
+      <point x="29.0" y="71.0" />
+    </edge>
+    <edge source="ir.ac.kntu.logic.ConsoleGraphicsEngine" target="ir.ac.kntu.logic.GraphicsEngine">
+      <point x="0.0" y="-61.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5" x="299.0317460317465" y="417.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Constructors</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
