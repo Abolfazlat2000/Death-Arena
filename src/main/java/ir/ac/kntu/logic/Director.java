@@ -28,10 +28,8 @@ public class Director {
 
         victoryState = VictoryState.NOT_FINISHED;
     }
-    public void creatTeams(int numOfSoldier) throws InterruptedException, IOException {
-        groupA.clear();
-        groupB.clear();
-        for(int i=0; i < numOfSoldier; i++){
+    public Soldier equipSoldier(int i){
+
             Soldier soldier;
             if (RandomHelper.nextInt(100) > 30){
                 AssultRifle assultRifle = new AssultRifle();
@@ -40,27 +38,23 @@ public class Director {
             } else{
                 SniperRifle sniperRifle = new SniperRifle(RandomHelper.nextBoolean());
                 soldier = new Soldier(i+1,true,sniperRifle,RandomHelper.nextInt(90)+10);
+                if (sniperRifle.isScope()){
+                    soldier.getGun().setHitRate(soldier.getGun().getHitRate() + RandomHelper.nextInt(10) + 5);
+                }
                 //System.out.println(sniperRifle.isScope());
                 calibreSetter(soldier);
             }
 
-            groupA.add(soldier);
-        }
+            return soldier;
+
+    }
+    public void creatTeams(int numOfSoldier) throws InterruptedException, IOException {
+        groupA.clear();
+        groupB.clear();
 
         for(int i=0; i < numOfSoldier; i++){
-            Soldier soldier;
-            if (RandomHelper.nextInt(100) > 40){
-                AssultRifle assultRifle = new AssultRifle();
-                soldier = new Soldier(i+1,false,assultRifle,RandomHelper.nextInt(90)+10);
-                calibreSetter(soldier);
-            } else{
-                SniperRifle sniperRifle = new SniperRifle(RandomHelper.nextBoolean());
-                soldier = new Soldier(i+1,false,sniperRifle,RandomHelper.nextInt(90)+10);
-                //System.out.println(sniperRifle.isScope());
-                calibreSetter(soldier);
-            }
-
-            groupB.add(soldier);
+            groupA.add(equipSoldier(i));
+            groupB.add(equipSoldier(i));
         }
 
         graphicsEngine.initialize(groupA,groupB);
