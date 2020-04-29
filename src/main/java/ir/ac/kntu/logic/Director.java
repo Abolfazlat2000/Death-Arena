@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import ir.ac.kntu.util.RandomHelper;
+
 public class Director {
 
     private List<Soldier> groupA ;
@@ -29,23 +30,22 @@ public class Director {
         victoryState = VictoryState.NOT_FINISHED;
     }
     public Soldier equipSoldier(int i){
-
-            Soldier soldier;
-            if (RandomHelper.nextInt(100) > 30){
-                AssultRifle assultRifle = new AssultRifle();
-                soldier = new Soldier(i+1,true,assultRifle,RandomHelper.nextInt(90)+10);
-                calibreSetter(soldier);
-            } else{
-                SniperRifle sniperRifle = new SniperRifle(RandomHelper.nextBoolean());
-                soldier = new Soldier(i+1,true,sniperRifle,RandomHelper.nextInt(90)+10);
-                if (sniperRifle.isScope()){
-                    soldier.getGun().setHitRate(soldier.getGun().getHitRate() + RandomHelper.nextInt(10) + 5);
-                }
-                //System.out.println(sniperRifle.isScope());
-                calibreSetter(soldier);
+        Soldier soldier;
+        if (RandomHelper.nextInt(100) > 30){
+            AssultRifle assultRifle = new AssultRifle();
+            soldier = new Soldier(i+1,true,assultRifle,RandomHelper.nextInt(90)+10);
+            calibreSetter(soldier);
+        } else{
+            SniperRifle sniperRifle = new SniperRifle(RandomHelper.nextBoolean());
+            soldier = new Soldier(i+1,true,sniperRifle,RandomHelper.nextInt(90)+10);
+            if (sniperRifle.isScope()){
+                soldier.getGun().setHitRate(soldier.getGun().getHitRate() + RandomHelper.nextInt(10) + 5);
             }
+            //System.out.println(sniperRifle.isScope());
+            calibreSetter(soldier);
+        }
 
-            return soldier;
+        return soldier;
 
     }
     public void creatTeams(int numOfSoldier) throws InterruptedException, IOException {
